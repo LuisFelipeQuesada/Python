@@ -1,0 +1,13 @@
+virtualenv==20.13.0
+django==3.2
+djangorestframework==3.12.2
+django-cors-headers==3.13.0
+fastapi==0.89.1
+pydantic==1.10.4
+uvicorn==0.20.0
+gitpython==3.1.30
+psycopg2-binary==2.9.5
+minio==7.1.12
+docker==6.0.1
+kafka-python==2.0.2
+django-oidc==0.1.4
