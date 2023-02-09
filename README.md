@@ -1,1 +1,1 @@
-Repo for python code
+Personal repositories and projects
