@@ -14,3 +14,15 @@ dicts = [{ "name": "Tom", "age": 10, "city": "Madrid" },
          { "name": "Jane", "age": 12, "city": "Berlin" }]
 print(extract_elements(dicts, "city"))
 
+#Receive two lists and to get the product and add it to a list?
+def multiply_lists(list1, list2):
+    product_list = []
+    for i in range(len(list1)):
+        product = list1[i] * list2[i]
+        product_list.append(product)
+    return product_list
+
+list1 = [1, 2, 3, 4]
+list2 = [10, 20, 30, 40]
+result = multiply_lists(list1, list2)
+print(result)
