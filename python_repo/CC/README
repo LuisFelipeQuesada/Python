@@ -1,4 +1,4 @@
-Para la ejecución de la soluciónse pueden ejecutar uno de los siguientes comandos:
+Para la ejecución de la solución, se puede ejecutar uno de los siguientes comandos:
 
 1) docker-compose up
 2) make build
