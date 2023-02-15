@@ -1,0 +1,49 @@
+version: "3.11"
+
+services:
+# Databases
+  icp_app_db:
+    build: ./app_db/
+    hostname: icp_app_db_host
+    container_name: icp_app_db
+    image: icp_app_db
+    restart: always
+    env_file:
+     - .env
+    environment:
+      - MYSQL_DATABASE=icptasksdb
+      - MYSQL_USER=icpuser
+      - MYSQL_PASSWORD=icp_u53r_p455
+      - MYSQL_ROOT_PASSWORD=7h115i7
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+    labels:
+      - icp_app_db
+    ports:
+      - 3306:3306
+    command: mysqld
+# Services
+  icp_app:
+    build: ./app/volume/
+    hostname: icp_app_host
+    container_name: icp_app
+    image: icp_app
+    environment:
+     - DJANGO_SETTINGS_MODULE:task_project.settings
+    restart: always
+    depends_on:
+      icp_app_db:
+        condition: service_started
+    labels:
+      - icp_app
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: ./app
+        target: /app
+    command: bash -c "source /app/volume/venv_icp/bin/activate &&
+                      pip3 install -r /app/volume/requirements.txt --no-cache-dir --root-user-action=ignore &&
+                      python3 /app/volume/manage.py makemigrations tasks_app && 
+                      python3 /app/volume/manage.py migrate --no-input --run-syncdb && 
+                      python3 /app/volume/manage.py runserver 0.0.0.0:8080"
