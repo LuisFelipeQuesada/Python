@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b5bc8fa-1380-4225-9a5d-964844bfcd4f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../brainnest/week4/day2/ex.py" beforeDir="false" afterPath="$PROJECT_DIR$/../brainnest/week4/day2/ex.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../icp_coursework/alucloud816377_lambda_functions/alucloud816377_create.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../icp_coursework/alucloud816377_lambda_functions/alucloud816377_lambda_create.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../icp_coursework/alucloud816377_lambda_functions/alucloud816377_lambda_update.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../icp_coursework/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +20,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="project" />
