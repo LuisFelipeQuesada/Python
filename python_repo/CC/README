@@ -1,4 +1,5 @@
 Para la ejecución de la solución, se puede ejecutar uno de los siguientes comandos:
+For the execution, you can either execute one of these commands
 
 1) docker-compose up
 2) make build
