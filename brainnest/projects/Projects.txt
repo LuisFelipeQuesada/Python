@@ -1,5 +1,0 @@
-1. To-Do List: Create a program that allows users to add, view, and mark items as complete on a to-do list.
-
-2. File Organizer: Create a script that organizes files into folders based on specific criteria (e.g. file type, date modified).
-
-3. Caesar Cipher encryption and decryption program: More info in the attached zip file.
