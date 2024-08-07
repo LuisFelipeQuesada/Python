@@ -3,5 +3,5 @@
 ## **CRM**
 
 ### **Libraries required**
-Use the command *pip install* to install the following libraries
-virtualenv
+Use the command *pip install* to install the following libraries:
+- virtualenv
