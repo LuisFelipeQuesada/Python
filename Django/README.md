@@ -5,3 +5,8 @@
 ### **Libraries required**
 Use the command *pip install* to install the following libraries:
 - virtualenv
+- Django
+- asgiref
+- pytz
+- sqlparse
+- setuptools
