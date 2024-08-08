@@ -10,3 +10,5 @@ Use the command *pip install* to install the following libraries:
 - pytz
 - sqlparse
 - setuptools
+
+NOTE: Se requirements files for a detailed list of libraries
