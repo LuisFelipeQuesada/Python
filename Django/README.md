@@ -11,4 +11,4 @@ Use the command *pip install* to install the following libraries:
 - sqlparse
 - setuptools
 
-NOTE: Se requirements files for a detailed list of libraries
+NOTE: See requirements files for a detailed list of libraries
