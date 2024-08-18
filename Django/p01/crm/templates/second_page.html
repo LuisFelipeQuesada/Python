@@ -9,7 +9,11 @@
     <div class="max-w-7xl mx-auto">
         <h1>Hello World</h1>
         <p>Here is our second custom HTML template</p>
-        {{ leads }}
+        <ul>
+            {% for lead in leads %}
+                <li>{{ lead.first_name }} {{ lead.last_name }}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
