@@ -1,30 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django CRM</title>
-    <style>
-        .lead {
-            padding-top:10px;
-            padding-bottom:10px;
-            padding-left:6px;
-            padding-right:6px;
-            margin-top: 10px;
-            backgroud-color: #f6f6f6;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <div class=".lead">
-        <h1>This is all of our leads</h1>
-        <p><a href="/leads/create/">Create a new lead</a></p>
-        {% for lead in leads %}
-            <div>
-                <a href="/leads/{{ lead.pk }}/">{{ lead.first_name }} {{ lead.last_name }}</a>. Age: {{ lead.age }}
-            </div>
-        {% endfor %}
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+    <a href="{% url 'leads:lead-create' %}">Create a new lead</a></p>
+    {% for lead in leads %}
+        <div>
+            <a href="{% url 'leads:lead-detail' lead.pk %}" >{{ lead.first_name }} {{ lead.last_name }}</a>. Age: {{ lead.age }}
+        </div>
+    {% endfor %}
+{% endblock content %}
