@@ -4,17 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django CRM</title>
-    <style>
-        .lead {
-            padding-top:10px;
-            padding-bottom:10px;
-            padding-left:6px;
-            padding-right:6px;
-            margin-top: 10px;
-            backgroud-color: #f6f6f6;
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
     <div class=".lead">
@@ -22,6 +11,10 @@
         <hr />
         <h1>This is the details of {{ lead.first_name }}</h1>
         <p>This person's age: {{ lead.age }}</p>
+        <p>The agent reponsible for this lead is: {{ lead.agent }}</p>
+        <hr />
+        <a href="/leads/{{ lead.pk }}/update">Update</a>
+        <a href="/leads/{{ lead.pk }}/delete">Delete</a>
     </div>
 </body>
 </html>
