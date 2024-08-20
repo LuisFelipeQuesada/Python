@@ -3,21 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJCRM</title>
+    <title>Django CRM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<style>
-    .lead {
-        padding-top:10px;
-        padding-bottom:10px;
-        padding-left:6px;
-        padding-right:6px;
-        margin-top: 10px;
-        backgroud-color: #f6f6f6;
-        width: 100%;
-    }
-</style>
+
 <body>
-    {% block content %}
-    {% endblock content %}
+    <div class="max-w-7xl mx-auto">
+        {% include 'navbar.html' %}
+        {% block content %}
+        {% endblock content %}
+    </div>
+    {% include 'scripts.html' %}
 </body>
 </html>
