@@ -1,10 +1,18 @@
-from django.shortcuts import render, redirect, reverse
-from django.http import HttpResponse
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Lead, Agent
-from .forms import LeadForm, LeadModelForm
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from .forms import LeadForm, LeadModelForm, CustomCreationForm
+from django.shortcuts import render, redirect, reverse
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 
 #-------------- Class-based view --------------
+class SignUpView(CreateView):
+    template_name = "registration/signup.html"
+    form_class = CustomCreationForm
+    
+    def get_success_url(self):
+        return reverse("login")
+
 class LandingPageView(TemplateView):
     template_name = "landing.html"
 
@@ -25,12 +33,21 @@ class LeadCreateView(CreateView):
     def get_success_url(self):
         return reverse("leads:lead-list")
 
+    def form_valid(self, form):
+        send_mail(
+            subject='A lead has been created',
+            message='Go to the site to see the new lead',
+            from_email='test@test.com',
+            recipient_list=['test2@test.com'],
+        )
+        return super(LeadCreateView, self).form_valid(form)
+
 class LeadUpdateView(UpdateView):
     template_name = "leads/lead_update.html"
     queryset = Lead.objects.all()
     form_class = LeadModelForm
     context_object_name = "lead"
-    
+
     def get_success_url(self):
         return reverse("leads:lead-list")
 
