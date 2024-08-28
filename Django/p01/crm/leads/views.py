@@ -41,7 +41,7 @@ class LeadDetailView(LoginRequiredMixin, DetailView):
     queryset = Lead.objects.all()
     context_object_name = "lead"
 
-class LeadCreateView(OrganiserAndLoginRequiredMixin, LoginRequiredMixin, CreateView):
+class LeadCreateView(OrganiserAndLoginRequiredMixin, CreateView):
     template_name = "leads/lead_create.html"
     form_class = LeadModelForm
     
@@ -57,7 +57,7 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, LoginRequiredMixin, CreateV
         )
         return super(LeadCreateView, self).form_valid(form)
 
-class LeadUpdateView(OrganiserAndLoginRequiredMixin, LoginRequiredMixin, UpdateView):
+class LeadUpdateView(OrganiserAndLoginRequiredMixin, UpdateView):
     template_name = "leads/lead_update.html"
     queryset = Lead.objects.all()
     form_class = LeadModelForm
@@ -71,7 +71,7 @@ class LeadUpdateView(OrganiserAndLoginRequiredMixin, LoginRequiredMixin, UpdateV
         # Initial queryset of leads for the entire organisation
         return Lead.objects.filter(organisation=user.userprofile)
 
-class LeadDeleteView(OrganiserAndLoginRequiredMixin, LoginRequiredMixin, DeleteView):
+class LeadDeleteView(OrganiserAndLoginRequiredMixin, DeleteView):
     template_name = 'leads/lead_delete.html'
     queryset = Lead.objects.all()
     
